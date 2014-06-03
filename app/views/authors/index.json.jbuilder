@@ -3,6 +3,6 @@ json.array!(@authors) do |author|
   json.url author_url(author, format: :json)
 
   json.books author.books do |book|
-    json.title book.title
+    json.extract! book, :id, :title, :price
   end
 end

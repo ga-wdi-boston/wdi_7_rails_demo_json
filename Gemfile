@@ -9,6 +9,8 @@ gem 'pry-rails'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
-
+gem 'dotenv-rails'
+gem 'twitter'
+gem 'turbolinks'
 
 gem 'oj' # A fast JSON parser and Object marshaller: https://github.com/ohler55/oj

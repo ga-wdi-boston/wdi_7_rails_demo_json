@@ -1,12 +1,15 @@
 class BooksController < ApplicationController
   # This controller uses built-in json rendering
 
-  before_action :set_book, only: [:show, :edit, :update, :destroy]
-  respond_to :json
+  before_action :set_book, only: [:show, :update, :destroy]
+  # respond_to :json
+
   def index
-    @books = Book.all
+    @books = Book.all # Lazy loaded. Not used until asked a question.
     # Somewhat faster for larger sets. Not needed most of the time
-    render json: Oj.dump(@books.lightning, mode: :compat)
+    # render json: Oj.dump(@books.lightning, mode: :compat)
+
+    render json: @books, include: :author # this is ok most of the time
   end
 
   def show
